@@ -43,4 +43,4 @@ n/a
 
 * The instructor, TAs, and classmates at the Coding Bootcamp at UNC
 
-![picture](namehere.png)
+![picture](notetaker.png)
