@@ -10,8 +10,7 @@ module.exports = function(app) {
       });
 
 
-    app.post("/api/notes", (req, res) => {
-       // console.log("note saved!!");
+    app.post("/api/notes", (req, res) => {;
         let newNote = req.body;
         let id = notes.length;
         newNote.id = id + 1;
@@ -22,8 +21,14 @@ module.exports = function(app) {
             };
 
         res.json(notes);
+        console.log("note saved!");
     });
       
-     
+    app.delete("/api/notes/:id", (req, res) => {
+        const itemRemove = req.params.id;
+        const index = notes.findIndex((element) => element.id === parseInt(itemRemove));
+        notes.splice(index, 1);
+        res.json(notes);
+    });
 });
 }
